@@ -1,6 +1,7 @@
 package com.mermela.rickandmortycompose.feature.home.presentation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 
@@ -9,5 +10,9 @@ fun HomeRoute(
     modifier: Modifier = Modifier,
     homeViewModel : HomeViewModel = hiltViewModel()
 ) {
-
+    val state by homeViewModel.charactersState
+    HomeScreen(
+        modifier = modifier,
+        state = state
+    )
 }
