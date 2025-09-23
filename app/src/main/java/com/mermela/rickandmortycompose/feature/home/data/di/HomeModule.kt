@@ -1,6 +1,6 @@
 package com.mermela.rickandmortycompose.feature.home.data.di
 
-import com.mermela.rickandmortycompose.feature.home.data.service.HomeService
+import com.mermela.rickandmortycompose.core.network.services.CharacterService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ class HomeModule {
 
     @Singleton
     @Provides
-    fun provideHomeService(retrofit : Retrofit) : HomeService {
-        return retrofit.create(HomeService::class.java)
+    fun provideCharacterService(retrofit : Retrofit) : CharacterService {
+        return retrofit.create(CharacterService::class.java)
     }
 }
